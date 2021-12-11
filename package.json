@@ -25,9 +25,9 @@
     "prettier": "^2.4.1"
   },
   "lint-staged": {
-    "*.{ts,js}": [
+    "*.{ts}": [
       "prettier --write",
-      "eslint  --fix"
+      "eslint **/**.ts --fix"
     ]
   },
   "devDependencies": {

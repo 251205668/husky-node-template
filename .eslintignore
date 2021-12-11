@@ -5,5 +5,4 @@ packages/test
 temp
 dist
 __testfixtures_
-**/*.config.js
-.eslintrc.js
+!.eslintrc.js

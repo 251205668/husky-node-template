@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint/eslint-plugin'],
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -15,30 +14,21 @@ module.exports = {
   env: {
     node: true,
   },
-  rules: {
-    '@typescript-eslint/unbound-method': 0,
-    '@typescript-eslint/ban-types': 0,
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: [
-          'variable',
-          'function',
-          'objectLiteralMethod',
-          'parameterProperty',
-          'classProperty',
-        ],
-        format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
-        leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'], // Your TypeScript files extension
+      parserOptions: {
+        project: ['./tsconfig.json'], // Specify it only for TypeScript files
       },
-    ],
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-floating-promises': ['off'],
-    '@typescript-eslint/explicit-member-accessibility': ['off'],
-    '@typescript-eslint/prefer-optional-chain': ['off'],
-    '@typescript-eslint/member-ordering': ['off'],
-    '@typescript-eslint/consistent-type-assertions': ['off'],
-    '@typescript-eslint/no-misused-promises': ['off'],
+    },
+  ],
+  parser: '@typescript-eslint/parser',
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 }
