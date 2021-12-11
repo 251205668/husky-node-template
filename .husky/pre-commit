@@ -1,4 +1,4 @@
 #!/bin/sh
-. "$(dirname "$0")/core/husky.sh"
+. "$(dirname "$0")/shell/husky.sh"
 
 npx lint-staged
