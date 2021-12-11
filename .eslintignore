@@ -1,0 +1,9 @@
+node_modules
+template
+template-vue3
+packages/test
+temp
+dist
+__testfixtures_
+**/*.config.js
+.eslintrc.js
